@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
     <h1>Hello {{ first_name }} </h1>
     <p>This is from HTML</p>
     <h2>{{ sentence|striptags }}</h2>
@@ -21,7 +17,8 @@
                 {{ topping }}
             </li>
        {% endif %}
+   
     {% endfor %}
     <h2>{{ favorite_pizza.1 }}</h2>
-</body>
-</html>
+    <a href="http://127.0.0.1:5000/name">Link</a>
+{% endblock%}

@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+   
+{% for message in get_flashed_messages()%}
+    {{message}}
+{% endfor%}
+
+{% if name %}
+    <h1>hello {{name}}</h1>
+    <img src="../static/images/Mt. Fuji with red pagoda, Fujiyoshida, Japan By INIGO CIA DA RIVA Stocksy_txp95a12c14B4D300_Medium_2211561.jpg" alt="image">
+{% else %}
+    <h2 id="demo">?</h2>
+    <script src="../static/javascript/app.js"></script>
+    <!-- <h1>What's your name?</h1> -->
+    <form method="POST">
+        {{form.hidden_tag() }}
+        {{form.name.label}} 
+        {{form.name()}}
+        {{form.submit()}}
+    </form>
+{% endif %}
+
+{% endblock%}
